@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EnvVault
+
+EnvVault is a modern, secure, and efficient way to manage your environment variables across multiple projects and environments. Built with Next.js 16 and Tailwind CSS, it offers a beautiful interface to organize, compare, and sync your secrets without the hassle of manual file management.
+
+![EnvVault Preview](public/preview.png)
+> *Note: Add a screenshot of your dashboard here*
+
+## Features
+
+- **Project Management**: Create and track multiple projects with dedicated environments.
+- **Multi-Environment Support**: Seamlessly manage variables for Development, Staging, and Production.
+- **Smart Variable Management**:
+  - Add, Edit, and Delete variables.
+  - **Batch Import**: Upload `.env` files or paste content to import multiple variables at once.
+  - **Search & Filter**: Instantly find the keys you need.
+- **Sync & Compare**:
+  - **Diff View**: Compare environments side-by-side to spot missing keys or value mismatches.
+  - **One-Click Sync**: Push variables from one environment to another with a single click.
+- **Modern UI**: Fully responsive Dark Mode interface built with Tailwind CSS v4 and DaisyUI.
+- **Local-First**: Powered by SQLite & Prisma, ensuring your data stays on your machine during development.
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Database**: [SQLite](https://www.sqlite.org/) via [Prisma ORM](https://www.prisma.io/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Notifications**: [React Hot Toast](https://react-hot-toast.com/)
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js 18+ installed
+- npm, pnpm, or yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/saianikethreddyp/Envvault.git
+   cd env-vault
+   ```
 
-## Learn More
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Setup Database**
+   Initialize the SQLite database and generate the Prisma client.
+   ```bash
+   npx prisma migrate dev --name init
+   npx prisma generate
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! If you have suggestions or want to improve EnvVault, feel free to fork the repo and submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
